@@ -1,4 +1,4 @@
-import { Scan, Cpu, PlayCircle } from 'lucide-react';
+import { Scan, Cpu, PlayCircle, ArrowRight  } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
@@ -26,7 +26,7 @@ const HowItWorks = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl text-gray-900 mb-8">
             From Physical Space to Digital Twin in Three Steps
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -37,17 +37,21 @@ const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
             <div key={index} className="relative">
+
+
               <div className="text-center">
-                <div className="relative mb-6">
-                  <div className="text-6xl text-gray-200 mb-4">
+                <div className="relative mb-8 flex flex-col items-center">
+                  {/* <div className="text-[8rem] md:text-[12rem] text-gray-100 font-bold leading-none">
                     {step.number}
-                  </div>
-                  <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white w-16 h-16 rounded-full flex items-center justify-center">
-                    {step.icon}
+                  </div> */}
+                  <div className="bg-slate-900 text-white w-24 h-24 rounded-full flex items-center justify-center -mt-20 md:-mt-28">
+                    <div className="w-12 h-12 flex items-center justify-center">
+                      {step.icon}
+                    </div>
                   </div>
                 </div>
                 
-                <h3 className="text-2xl mb-4 text-gray-900 mt-8">
+                <h3 className="text-2xl mb-4 text-gray-900">
                   {step.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -57,9 +61,8 @@ const HowItWorks = () => {
 
               {/* Connector Arrow */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-full w-12 flex items-center justify-center">
-                  <div className="w-8 h-0.5 bg-gray-300"></div>
-                  <div className="absolute right-0 w-2 h-2 bg-gray-300 transform rotate-45 translate-x-1"></div>
+                <div className="hidden md:flex absolute top-16 left-full w-12 items-center justify-center">
+                  <ArrowRight className="w-8 h-8 text-gray-300" />
                 </div>
               )}
             </div>

@@ -1,4 +1,8 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Application, Entity } from '@playcanvas/react'
+import { Camera, GSplat, Script } from '@playcanvas/react/components'
+import { CameraControls } from 'playcanvas/scripts/esm/camera-controls.mjs'
+import { useSplat } from '@playcanvas/react/hooks'
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -11,6 +15,18 @@ const HeroSection = () => {
   const trustedByLogos = [
     "Sotheby's", "Coldwell Banker", "Re/Max", "Century 21", "Keller Williams"
   ];
+
+  function ToyCat() {
+    // const { asset } = useSplat('https://developer.playcanvas.com/assets/toy-cat.sog');
+    const { asset } = useSplat('https://superspl.at/view?id=99dbe907');
+    if (!asset) return null;
+
+    return (
+        <Entity position={[0, -0.7, 0]} rotation={[0, 0, 180]}>
+            <GSplat asset={asset} />
+        </Entity>
+    );
+}
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -37,26 +53,36 @@ const HeroSection = () => {
         {/* Interactive 3D Model Placeholder */}
         <div className="relative mb-12">
           <div className="w-full max-w-2xl mx-auto h-64 md:h-80 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg border border-white/20 backdrop-blur-sm flex items-center justify-center">
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
                 <div className="w-8 h-8 bg-blue-400 rounded-full animate-pulse"></div>
               </div>
               <p className="text-white/80">Interactive 3D Model</p>
               <p className="text-sm text-white/60">Click and drag to explore</p>
-            </div>
+            </div> */}
+            {/* <Application graphicsDeviceOptions={{ antialias: false }} >
+              <Entity name="Camera" position={[0, 0, 2.5]}>
+                  <Camera />
+                  <Script script={CameraControls} />
+              </Entity>
+              <ToyCat />
+          </Application> */}
+          {/* <iframe id="viewer" width="800" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=99dbe907"></iframe> */}
+          {/* <iframe id="viewer" width="800" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=20f257fe"></iframe> */}
+          <iframe id="viewer" width="800" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=32bcdb1d"></iframe>
           </div>
         </div>
 
-        <button 
+        {/* <button 
           onClick={scrollToContact}
           className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors"
         >
           Schedule a Demo
-        </button>
+        </button> */}
       </div>
 
       {/* Trusted By Section */}
-      <div className="absolute bottom-8 left-0 right-0 z-10">
+      {/* <div className="absolute bottom-8 left-0 right-0 z-10">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-center text-white/60 mb-4">Trusted By</p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
@@ -67,7 +93,7 @@ const HeroSection = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

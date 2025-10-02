@@ -23,7 +23,7 @@ const WhyVividSpaces = () => {
     <section id="why-us" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl text-gray-900 mb-8">
             A Clearer Picture. A Faster Sale.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

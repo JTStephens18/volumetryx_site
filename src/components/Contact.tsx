@@ -34,11 +34,11 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl text-gray-900 mb-8">
               Ready to Showcase Your Property in Its True Light?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Let's discuss how VividSpaces can transform your real estate marketing and help you close deals faster.
+              Let's discuss how Volumetryx Labs can transform your real estate marketing and help you close deals faster.
             </p>
             
             <div className="space-y-6">
@@ -60,8 +60,7 @@ const Contact = () => {
                 </h3>
                 <div className="space-y-2 text-gray-600">
                   <p>📧 hello@vividspaces.com</p>
-                  <p>📞 (555) 123-4567</p>
-                  <p>🏢 Los Angeles, CA</p>
+                  <p>🏢 Birmingham, AL</p>
                 </div>
               </div>
             </div>
