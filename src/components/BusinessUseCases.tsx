@@ -87,7 +87,7 @@ const BusinessUseCases = () => {
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed">
               In today's competitive market, agents who leverage cutting-edge technology don't just survive—they thrive. 
-              VividSpaces gives you the tools to command higher commissions, close deals faster, and build a reputation 
+              Volumetryx gives you the tools to command higher commissions, close deals faster, and build a reputation 
               that keeps clients coming back.
             </p>
           </div>

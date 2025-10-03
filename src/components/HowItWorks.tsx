@@ -12,7 +12,7 @@ const HowItWorks = () => {
       number: "02", 
       icon: <Cpu className="w-8 h-8" />,
       title: "PROCESS",
-      description: "We transform the raw scan data into a stunning Gaussian Splat model using cutting-edge AI and proprietary algorithms."
+      description: "We transform the raw scan data into a stunning 3D model using cutting-edge AI and proprietary algorithms."
     },
     {
       number: "03",

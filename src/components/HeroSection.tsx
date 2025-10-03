@@ -1,7 +1,7 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Application, Entity } from '@playcanvas/react'
 import { Camera, GSplat, Script } from '@playcanvas/react/components'
-import { CameraControls } from 'playcanvas/scripts/esm/camera-controls.mjs'
+// import { CameraControls } from 'playcanvas/scripts/esm/camera-controls.mjs'
 import { useSplat } from '@playcanvas/react/hooks'
 
 const HeroSection = () => {
@@ -29,37 +29,22 @@ const HeroSection = () => {
 }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <ImageWithFallback
-          src="https://images.unsplash.com/photo-1706809019104-02d83b4541ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBob3VzZSUyMGludGVyaW9yJTIwM0R8ZW58MXx8fHwxNzU5NDE3MzA4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Luxury modern house interior"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <h1 className="text-5xl md:text-7xl text-white mb-6 leading-tight">
-          Experience Real Estate in a <span className="text-blue-400">New Dimension</span>
+        <h1 className="text-5xl md:text-7xl text-gray-900 mb-6 leading-tight">
+          Experience Real Estate in a <span className="text-blue-600">New Dimension</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-2xl mx-auto">
           Transform properties into immersive 3D experiences that sell faster and showcase every detail with stunning realism.
         </p>
 
         {/* Interactive 3D Model Placeholder */}
         <div className="relative mb-12">
-          <div className="w-full max-w-2xl mx-auto h-64 md:h-80 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg border border-white/20 backdrop-blur-sm flex items-center justify-center">
-            {/* <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
-                <div className="w-8 h-8 bg-blue-400 rounded-full animate-pulse"></div>
-              </div>
-              <p className="text-white/80">Interactive 3D Model</p>
-              <p className="text-sm text-white/60">Click and drag to explore</p>
-            </div> */}
+          <div className="w-full max-w-2xl mx-auto aspect-video bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg border-2 border-blue-600 backdrop-blur-sm flex items-center justify-center">
             {/* <Application graphicsDeviceOptions={{ antialias: false }} >
               <Entity name="Camera" position={[0, 0, 2.5]}>
                   <Camera />
@@ -69,10 +54,9 @@ const HeroSection = () => {
           </Application> */}
           {/* <iframe id="viewer" width="800" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=99dbe907"></iframe> */}
           {/* <iframe id="viewer" width="800" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=20f257fe"></iframe> */}
-          <iframe id="viewer" width="800" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=32bcdb1d"></iframe>
+          <iframe id="viewer" className="w-full h-full rounded-lg" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=32bcdb1d"></iframe>
           </div>
         </div>
-
         {/* <button 
           onClick={scrollToContact}
           className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-colors"
