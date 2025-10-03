@@ -14,11 +14,31 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You would typically send this to your backend
+    
+    // The email address you want to send the form data to
+    const recipientEmail = 'info@volumetryxlabs.com';
+
+    // Create the email subject
+    const subject = encodeURIComponent(`New Demo Request from ${formData.name}`);
+
+    // Create the email body with all form data
+    const body = encodeURIComponent(
+      `You have a new demo request with the following details:\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Company: ${formData.company || 'N/A'}\n` +
+      `Phone: ${formData.phone || 'N/A'}\n` +
+      `Property Type: ${formData.propertyType || 'N/A'}\n\n` +
+      `Message:\n${formData.message}`
+    );
+
+    // Construct the mailto link
+    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+
+    // Open the user's default email client
+    window.location.href = mailtoLink;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -50,7 +70,7 @@ const Contact = () => {
                   <li>• Free consultation and property assessment</li>
                   <li>• Custom quote based on your specific needs</li>
                   <li>• Demo of our 3D technology capabilities</li>
-                  <li>• Timeline and project roadmap</li>
+                  {/* <li>• Timeline and project roadmap</li> */}
                 </ul>
               </div>
               
@@ -59,7 +79,7 @@ const Contact = () => {
                   Contact Information
                 </h3>
                 <div className="space-y-2 text-gray-600">
-                  <p>📧 hello@vividspaces.com</p>
+                  <p>📧 <a href="mailto:info@volumetryxlabs.com">info@volumetryxlabs.com</a></p>
                   <p>🏢 Birmingham, AL</p>
                 </div>
               </div>
