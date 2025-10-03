@@ -43,7 +43,7 @@ const HeroSection = () => {
         </p>
 
         {/* Interactive 3D Model Placeholder */}
-        <div className="relative mb-12">
+        <div className="relative">
           <div className="w-full max-w-2xl mx-auto aspect-video bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg border-2 border-blue-600 backdrop-blur-sm flex items-center justify-center">
             {/* <Application graphicsDeviceOptions={{ antialias: false }} >
               <Entity name="Camera" position={[0, 0, 2.5]}>
