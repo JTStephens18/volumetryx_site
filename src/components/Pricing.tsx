@@ -13,7 +13,7 @@ const Pricing = () => {
   const packages = [
     {
       name: "Essential",
-      price: "$995",
+      price: "$350",
       subtitle: "Starting at",
       description: "Ideal for standard homes and condos.",
       features: [
@@ -29,7 +29,7 @@ const Pricing = () => {
     },
     {
       name: "Premium",
-      price: "$1,795", 
+      price: "750", 
       subtitle: "Starting at",
       description: "The perfect solution for luxury homes and large properties.",
       features: [
