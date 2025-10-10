@@ -53,7 +53,7 @@
       target: 'esnext',
       outDir: 'build',
     },
-    base: '/',
+    base: '/volumetryx_site/',
     server: {
       port: 3000,
       open: true,
