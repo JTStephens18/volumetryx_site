@@ -12,32 +12,31 @@ const Pricing = () => {
 
   const packages = [
     {
-      name: "Essential",
-      price: "$350",
+      name: "Digital Listing",
+      price: "$499",
       subtitle: "Starting at",
-      description: "Ideal for standard homes and condos.",
+      description: "Ideal for standard homes that need to stand out.",
       features: [
-        "Up to 3,000 sq ft",
-        "High-Fidelity 3D Model",
-        "Web & Mobile Compatible", 
+        "Up to 2,500 sq ft",
+        "High-Fidelity, interactive 3D Model",
+        "Up to 30 High-Resolution Photos (Extracted from model)", 
         "Standard Hosting",
-        "High-Resolution 4K Video Fly-through"
       ],
       popular: false,
       buttonText: "Get Started",
       buttonVariant: "outline" as const
     },
     {
-      name: "Premium",
-      price: "$750", 
+      name: "Marketing Powerhouse",
+      price: "$799", 
       subtitle: "Starting at",
-      description: "The perfect solution for luxury homes and large properties.",
+      description: "The complete package to market your property across all digital channels.",
       features: [
-        "Up to 8,000 sq ft",
-        "Everything in Essential, plus:",
-        "Branded Virtual Tour",
+        "Up to 3,500 sq ft",
+        "Everything in Digital Listing, plus:",
+        "Up to 50 High-Resolution Photos",
+        "One 60-Second Cinematic Video Tour",
         "Schematic Floor Plan Generation",
-        "Dedicated Account Manager"
       ],
       popular: true,
       buttonText: "Get Started",
@@ -49,11 +48,12 @@ const Pricing = () => {
       subtitle: "",
       description: "For developers, architects, and portfolio clients.",
       features: [
-        "Unlimited Scale",
-        "Everything in Premium, plus:",
-        "Multi-Property Packages",
-        "API Access for Custom Integrations",
-        "Pre-Construction Visualization"
+        "Up to 4,500 sq ft",
+        "Everything in Marketing Powerhouse, plus:",
+        "Virtual Staging for 3 Empty Rooms",
+        "Unlimited High-Resolution Photos",
+        "Social Media Content Pack (3 vertical video clips)",
+        "Digital Twin File for Homeowner",
       ],
       popular: false,
       buttonText: "Contact Us",
@@ -66,10 +66,10 @@ const Pricing = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl text-gray-900 mb-4">
-            Transparent Pricing for Uncompromising Quality
+            The All-in-One package for Every Listing
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose the package that best fits your property's scale and ambition.
+            Choose the solution that best fits your marketing needs. Simple, transparent pricing for a superior product.
           </p>
         </div>
 
@@ -136,9 +136,9 @@ const Pricing = () => {
 
         <div className="text-center mt-12">
           <p className="text-gray-600">
-            All packages include comprehensive support and training. 
+            All packages include comprehensive support. Additional square footage priced at +$50 per 500 sq ft.
             <br />
-            Custom solutions available for unique requirements.
+            Add-ons like virtual staging and floor plans are available for any package. Custom solutions available for unique requirements.
           </p>
         </div>
       </div>

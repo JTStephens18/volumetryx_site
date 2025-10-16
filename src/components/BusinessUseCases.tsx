@@ -20,8 +20,8 @@ const BusinessUseCases = () => {
       benefits: [
         "Reach international buyer markets",
         "Present properties in real-time",
-        "Reduce time-wasting appointments",
-        "Accelerate decision-making process"
+        "Accelerate decision-making process",
+        "Enable remote renovation planning and measurement"
       ]
     },
     {
