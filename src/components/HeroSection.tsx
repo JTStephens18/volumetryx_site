@@ -35,11 +35,13 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         <h1 className="text-5xl md:text-7xl text-gray-900 mb-6 leading-tight">
-          Experience Real Estate in a <span className="text-blue-600">New Dimension</span>
+          {/* Experience Real Estate in a <span className="text-blue-600">New Dimension</span> */}
+          <span className="text-blue-600">One Scan.</span> Every Marketing Asset.
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-2xl mx-auto">
-          Transform properties into immersive 3D experiences that sell faster and showcase every detail with stunning realism.
+          {/* Transform properties into immersive 3D experiences that sell faster and showcase every detail with stunning realism. */}
+          Transform properties into a photorealistic digital twin that generates every marketing asset you need.
         </p>
 
         {/* Interactive 3D Model Placeholder */}
