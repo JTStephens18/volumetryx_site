@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { X, Play } from 'lucide-react';
-import innovationDepotImage from '../assets/ID_main_event_space.png';
+// import innovationDepotImage from '../assets/ID_main_event_space.png';
+import HomeExteriorImage from "../assets/HomeExterior.png"
 import modernFarmhouseImage from '../assets/ModernFarmhouse.png';
 import luxuryApartmentImage from '../assets/LuxuryApartment.png';
 
@@ -78,12 +79,12 @@ const Portfolio = () => {
     }, 
     {
       id: 3,
-      title: "Innovation Depot",
-      location: "Birmingham, AL",
+      title: "Street View",
+      location: "Tacoma, WA",
       size: "2,500 sq ft",
-      image: innovationDepotImage,
-      description: "Renovated Main Event Space at Innovation Depot, showcasing modern design and flexible layouts for various events.",
-      splat: "https://superspl.at/s?id=d8a9d844"
+      image: HomeExteriorImage,
+      description: "Exterior shot of a single story home.",
+      splat: "https://superspl.at/s?id=007cff23"
     }, 
   ];
 
