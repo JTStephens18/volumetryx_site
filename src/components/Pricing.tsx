@@ -29,7 +29,7 @@ const Pricing = () => {
     },
     {
       name: "Premium",
-      price: "750", 
+      price: "$750", 
       subtitle: "Starting at",
       description: "The perfect solution for luxury homes and large properties.",
       features: [
