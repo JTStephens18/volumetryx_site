@@ -18,7 +18,7 @@ const Pricing = () => {
       description: "Ideal for standard homes that need to stand out.",
       features: [
         "Up to 2,500 sq ft",
-        "High-Fidelity, interactive 3D Model",
+        "Link to High-Fidelity, interactive 3D Model",
         "Up to 30 High-Resolution Photos (Extracted from model)", 
         "Standard Hosting",
       ],
