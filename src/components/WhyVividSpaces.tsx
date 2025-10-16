@@ -4,18 +4,18 @@ const WhyVividSpaces = () => {
   const advantages = [
     {
       icon: <Eye className="w-8 h-8" />,
-      title: "Unparalleled Realism",
-      description: "Our Gaussian Splatting technology captures every detail with photorealistic accuracy that traditional photography simply cannot match."
+      title: "Total Immersion",
+      description: "Our models allow buyers to move freely and naturally anywhere in the space. Look under counters and peek around corners with stunning photorealism that lets you truly experience the feel and flow of the home."
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Total Immersion",
-      description: "Buyers can explore properties as if they're physically there, creating emotional connections that drive faster decisions."
+      title: "The Ultimate Content Engine",
+      description: "Your property scan is more than a tour; it's a content factory. Generate unlimited high-resolution photos from any angle, cinematic video fly-throughs, and dozens of social media clips, all without a second visit."
     },
     {
       icon: <Monitor className="w-8 h-8" />,
       title: "Seamless Performance",
-      description: "Web and mobile compatible with lightning-fast loading times. No apps, no downloads - just instant access to stunning 3D spaces."
+      description: "Our 3D experiences are built for the web. They work on desktop and mobile with no special apps required, giving buyers instant access."
     }
   ];
 

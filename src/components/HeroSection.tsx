@@ -41,7 +41,7 @@ const HeroSection = () => {
         
         <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-2xl mx-auto">
           {/* Transform properties into immersive 3D experiences that sell faster and showcase every detail with stunning realism. */}
-          Transform properties into a photorealistic digital twin that generates every marketing asset you need.
+          Transform properties into a photorealistic digital twin that generates every marketing asset you need. Get your tour, photos, videos, and floor plan from a single, streamlined appointment.
         </p>
 
         {/* Interactive 3D Model Placeholder */}
