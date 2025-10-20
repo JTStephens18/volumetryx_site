@@ -14,32 +14,37 @@ const Contact = () => {
     message: ''
   });
 
-const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // The email address you want to send the form data to
-    const recipientEmail = 'info@volumetryxlabs.com';
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
-    // Create the email subject
-    const subject = encodeURIComponent(`New Demo Request from ${formData.name}`);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    // Create the email body with all form data
-    const body = encodeURIComponent(
-      `You have a new demo request with the following details:\n\n` +
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Company: ${formData.company || 'N/A'}\n` +
-      `Phone: ${formData.phone || 'N/A'}\n` +
-      `Property Type: ${formData.propertyType || 'N/A'}\n\n` +
-      `Message:\n${formData.message}`
-    );
+  console.log("Form data ", formData)
 
-    // Construct the mailto link
-    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+  try {
+    const response = await fetch('/api/send_email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-    // Open the user's default email client
-    window.location.href = mailtoLink;
-  };
+    const result = await response.json();
+
+    if (response.ok) {
+      // alert('Your demo request has been sent successfully!');
+      console.log('Email sent:', result);
+      setHasSubmitted(true);
+    } else {
+      console.error('Error sending email:', result.error);
+      // alert('Failed to send your request. Please try again.');
+    }
+  } catch (error) {
+    console.error('Request error:', error);
+    // alert('Something went wrong. Please try again later.');
+  }
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
