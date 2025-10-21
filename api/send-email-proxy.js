@@ -1,5 +1,5 @@
 // api/send-email-proxy.js
-import { SecurityTokenServiceClient } from '@googleapis/sts';
+import { SecurityTokenServiceClient } from 'google-auth-library/build/src/auth/tokenclient';
 import { GoogleAuth } from 'google-auth-library';
 
 // These are the env vars you just set in Vercel
