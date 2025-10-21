@@ -22,7 +22,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   console.log("Form data ", formData)
 
   try {
-    const response = await fetch('/api/send_email', {
+    const response = await fetch('/api/send-email-proxy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
