@@ -43,7 +43,7 @@ async function getGoogleIdToken() {
 const audience = 'sts.googleapis.com';
 const vercelToken = await getVercelOidcToken(audience);
 
-const authClient = new ExternalAccountClient.fromJSON({
+const authClient = ExternalAccountClient.fromJSON({
     type: 'external_account',
     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
     subjectTokenType: 'urn:ietf:params:oauth:token-type:id_token',
