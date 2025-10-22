@@ -29,7 +29,7 @@ async function getGoogleIdToken() {
 
 
   // 1. Exchange the Vercel OIDC token for a Google Access Token
-const stsResponse = await stsClient.v1.token({
+const stsResponse = await stsClient.token({
   requestBody: {
     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
     grantType: 'urn:ietf:params:oauth:grant-type:token-exchange',
@@ -70,7 +70,7 @@ const googleAccessToken = stsResponse.data.access_token;
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        audience: `https://volumetryx-api-${process.env.GCP_PROJECT_ID}.us-central1.run.app`,
+        audience: `https://volumetryx-api-${process.env.GCP_PROJECT_NUMBER}.us-central1.run.app`,
         includeEmail: true,
       }),
     }
