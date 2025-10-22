@@ -23,6 +23,7 @@ async function getGoogleIdToken() {
     throw new Error('OIDC token not configured for this request.');
   }
 
+  console.log("Vercel OIDC Token acquired. ", vercelOidcToken);
   console.log("Audience ", `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`);
   console.log("STS audience:", process.env.GCP_PROJECT_NUMBER, process.env.GCP_WORKLOAD_IDENTITY_POOL_ID, process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID);
 
@@ -53,6 +54,7 @@ async function getGoogleIdToken() {
 //   // The 'Authorization' header now contains 'Bearer [Google ID Token]'
 //   return headers.Authorization;
 
+console.log("STS Response:", stsResponse.data);
 const googleAccessToken = stsResponse.data.access_token;
   if (!googleAccessToken) throw new Error('Failed to get Google access token from STS.');
 
