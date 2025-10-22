@@ -29,7 +29,7 @@ async function getGoogleIdToken() {
 
 
   // 1. Exchange the Vercel OIDC token for a Google Access Token
-const stsResponse = await stsClient.token({
+const stsResponse = await stsClient.v1.token({
   requestBody: {
     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
     grantType: 'urn:ietf:params:oauth:grant-type:token-exchange',
@@ -38,6 +38,7 @@ const stsResponse = await stsClient.token({
     subjectToken: vercelOidcToken,
   },
 });
+console.log("STS Response data:", stsResponse.data);
 //   const googleAccessToken = stsResponse.accessToken;
 
 //   // 2. Use the Google Access Token to impersonate the service account
