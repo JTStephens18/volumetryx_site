@@ -1,6 +1,5 @@
 // pages/api/send-email-proxy.js
-// const { sts_v1 } = require('@googleapis/sts');
-const { google } = require('googleapis');
+const { sts_v1 } = require('@googleapis/sts');
 const { getVercelOidcToken } = require('@vercel/functions/oidc');
 
 // --- Vercel Environment Variables ---
@@ -12,8 +11,8 @@ const serviceAccountEmail = process.env.GCP_SERVICE_ACCOUNT_EMAIL;
 const cloudRunUrl = `https://volumetryx-api-${process.env.GCP_PROJECT_NUMBER}.us-central1.run.app`;
 
 // Initialize Google clients
-// const stsClient = new sts_v1.StsClient();
-const stsClient = google.sts('v1');
+const stsClient = new sts_v1.Sts();
+// const stsClient = google.sts('v1');
 
 async function getGoogleIdToken() {
     
@@ -25,7 +24,7 @@ async function getGoogleIdToken() {
   }
 
   // 1. Exchange the Vercel OIDC token for a Google Access Token
-  const [stsResponse] = await stsClient.token({
+  const [stsResponse] = await stsClient.v1.token({
     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
     grantType: 'urn:ietf:params:oauth:grant-type:token-exchange',
     requestedTokenType: 'urn:ietf:params:oauth:token-type:access_token',
