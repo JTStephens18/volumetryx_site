@@ -74,7 +74,8 @@ const authClient = ExternalAccountClient.fromJSON({
 //   return headers.Authorization;
 
 console.log("STS Response:");
-const googleAccessToken = authClient.getAccessToken().token;
+const googleAccessResponse = await authClient.getAccessToken();
+const googleAccessToken = googleAccessResponse.token;
   if (!googleAccessToken) throw new Error('Failed to get Google access token from STS.');
 
   // 2. Impersonate your service account to get an ID token for Cloud Run
