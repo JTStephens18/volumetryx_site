@@ -11,7 +11,7 @@ const serviceAccountEmail = process.env.GCP_SERVICE_ACCOUNT_EMAIL;
 const cloudRunUrl = `https://volumetryx-api-${process.env.GCP_PROJECT_NUMBER}.us-central1.run.app`;
 
 // Initialize Google clients
-const stsClient = new sts_v1.Sts();
+const stsClient = new sts_v1.StsClient();
 
 async function getGoogleIdToken() {
     
