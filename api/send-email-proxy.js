@@ -1,7 +1,6 @@
 // pages/api/send-email-proxy.js
 const { sts_v1 } = require('@googleapis/sts');
 const { getVercelOidcToken } = require('@vercel/functions/oidc');
-const fetch = require('node-fetch'); // if needed on Node 18
 
 // --- Vercel Environment Variables ---
 // (You set these in Vercel's dashboard)
