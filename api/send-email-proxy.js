@@ -24,25 +24,6 @@ async function getGoogleIdToken() {
     throw new Error('OIDC token not configured for this request.');
   }
 
-  console.log("Vercel OIDC Token acquired. ", vercelOidcToken);
-  console.log("Audience ", `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`);
-  console.log("STS audience:", process.env.GCP_PROJECT_NUMBER, process.env.GCP_WORKLOAD_IDENTITY_POOL_ID, process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID);
-
-
-  // 1. Exchange the Vercel OIDC token for a Google Access Token
-// const stsResponse = await stsClient.v1.token({
-//   requestBody: {
-//     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
-//     grantType: 'urn:ietf:params:oauth:grant-type:token-exchange',
-//     requestedTokenType: 'urn:ietf:params:oauth:token-type:access_token',
-//     subjectTokenType: 'urn:ietf:params:oauth:token-type:jwt',
-//     subjectToken: vercelOidcToken,
-//   },
-// });
-
-const audience = 'sts.googleapis.com';
-const vercelToken = await getVercelOidcToken(audience);
-
 const authClient = ExternalAccountClient.fromJSON({
     type: 'external_account',
     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
@@ -54,26 +35,6 @@ const authClient = ExternalAccountClient.fromJSON({
     },
 });
 
-// console.log("STS Response data:", stsResponse.data);
-//   const googleAccessToken = stsResponse.accessToken;
-
-//   // 2. Use the Google Access Token to impersonate the service account
-//   //    and generate a Google ID Token for Cloud Run.
-//   const idTokenClient = await auth.getIdTokenClient(cloudRunUrl);
-  
-//   // Set the client to use the Access Token we just got
-//   idTokenClient.getRequestHeaders = async () => {
-//     return {
-//       Authorization: `Bearer ${googleAccessToken}`,
-//     };
-//   };
-
-//   // Get the ID token
-//   const headers = await idTokenClient.getRequestHeaders(cloudRunUrl);
-//   // The 'Authorization' header now contains 'Bearer [Google ID Token]'
-//   return headers.Authorization;
-
-console.log("STS Response:");
 const googleAccessResponse = await authClient.getAccessToken();
 const googleAccessToken = googleAccessResponse.token;
   if (!googleAccessToken) throw new Error('Failed to get Google access token from STS.');
@@ -102,11 +63,6 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
-
-//   if (!vercelOidcToken) {
-//     console.error("VERCEL_OIDC_TOKEN is not available. Ensure OIDC is enabled in Vercel settings.");
-//     return res.status(500).json({ error: 'OIDC token not configured.' });
-//   }
 
   try {
     console.log('VERCEL_IDENTITY_URL:', process.env.VERCEL_IDENTITY_URL);
