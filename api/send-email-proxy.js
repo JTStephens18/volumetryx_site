@@ -1,5 +1,6 @@
 // pages/api/send-email-proxy.js
-const { sts_v1 } = require('@googleapis/sts');
+// const { sts_v1 } = require('@googleapis/sts');
+const { google } = require('googleapis');
 const { getVercelOidcToken } = require('@vercel/functions/oidc');
 
 // --- Vercel Environment Variables ---
@@ -11,7 +12,8 @@ const serviceAccountEmail = process.env.GCP_SERVICE_ACCOUNT_EMAIL;
 const cloudRunUrl = `https://volumetryx-api-${process.env.GCP_PROJECT_NUMBER}.us-central1.run.app`;
 
 // Initialize Google clients
-const stsClient = new sts_v1.StsClient();
+// const stsClient = new sts_v1.StsClient();
+const stsClient = google.sts('v1');
 
 async function getGoogleIdToken() {
     
