@@ -19,7 +19,8 @@ const Contact = () => {
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
-  console.log("Form data ", formData)
+  // Prevent multiple submissions
+  if (hasSubmitted) return;
 
   try {
     const response = await fetch('/api/send-email-proxy', {
@@ -178,9 +179,10 @@ const handleSubmit = async (e: React.FormEvent) => {
 
               <Button 
                 type="submit" 
-                className="w-full bg-slate-900 hover:bg-slate-800 text-white"
+                className="w-full bg-slate-900 hover:bg-slate-800 text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={hasSubmitted}
               >
-                Schedule a Demo
+                {hasSubmitted ? 'Request Sent!' : 'Schedule a Demo'}
               </Button>
             </form>
           </div>
