@@ -1,10 +1,7 @@
 // pages/api/send-email-proxy.js
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-
 const { sts_v1 } = require('@googleapis/sts');
-const { GoogleAuth } = require('google-auth-library');
-import { getVercelOidcToken } from '@vercel/functions/oidc';
+const { getVercelOidcToken } = require('@vercel/functions/oidc');
+const fetch = require('node-fetch'); // if needed on Node 18
 
 // --- Vercel Environment Variables ---
 // (You set these in Vercel's dashboard)
@@ -17,7 +14,6 @@ const cloudRunUrl = `https://volumetryx-api-${projectId}.us-central1.run.app`;
 
 // Initialize Google clients
 const stsClient = new sts_v1.Sts();
-const auth = new GoogleAuth();
 
 async function getGoogleIdToken() {
     
@@ -91,7 +87,6 @@ export default async function handler(req, res) {
   try {
     console.log('VERCEL_IDENTITY_URL:', process.env.VERCEL_IDENTITY_URL);
 
-    
     const token = await getVercelOidcToken();
     const [, payload] = token.split('.');
     console.log(JSON.parse(Buffer.from(payload, 'base64').toString()));
