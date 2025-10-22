@@ -1,5 +1,6 @@
 // pages/api/send-email-proxy.js
-const { sts_v1 } = require('@googleapis/sts');
+// const { sts_v1 } = require('@googleapis/sts');
+import { ExternalAccountClient } from 'google-auth-library';
 const { getVercelOidcToken } = require('@vercel/functions/oidc');
 
 // --- Vercel Environment Variables ---
@@ -29,16 +30,31 @@ async function getGoogleIdToken() {
 
 
   // 1. Exchange the Vercel OIDC token for a Google Access Token
-const stsResponse = await stsClient.v1.token({
-  requestBody: {
+// const stsResponse = await stsClient.v1.token({
+//   requestBody: {
+//     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
+//     grantType: 'urn:ietf:params:oauth:grant-type:token-exchange',
+//     requestedTokenType: 'urn:ietf:params:oauth:token-type:access_token',
+//     subjectTokenType: 'urn:ietf:params:oauth:token-type:jwt',
+//     subjectToken: vercelOidcToken,
+//   },
+// });
+
+const audience = 'sts.googleapis.com';
+const vercelToken = await getVercelOidcToken(audience);
+
+const authClient = new ExternalAccountClient({
+    type: 'external_account',
     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
-    grantType: 'urn:ietf:params:oauth:grant-type:token-exchange',
-    requestedTokenType: 'urn:ietf:params:oauth:token-type:access_token',
-    subjectTokenType: 'urn:ietf:params:oauth:token-type:jwt',
-    subjectToken: vercelOidcToken,
-  },
+    subjectTokenType: 'urn:ietf:params:oauth:token-type:id_token',
+    tokenUrl: 'https://sts.googleapis.com/v1/token',
+    credential_source: {
+        token: vercelToken,
+    },
+    serviceAccountImpersonationUrl: `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${serviceAccountEmail}:generateAccessToken`,
 });
-console.log("STS Response data:", stsResponse.data);
+
+// console.log("STS Response data:", stsResponse.data);
 //   const googleAccessToken = stsResponse.accessToken;
 
 //   // 2. Use the Google Access Token to impersonate the service account
@@ -57,8 +73,8 @@ console.log("STS Response data:", stsResponse.data);
 //   // The 'Authorization' header now contains 'Bearer [Google ID Token]'
 //   return headers.Authorization;
 
-console.log("STS Response:", stsResponse.data);
-const googleAccessToken = stsResponse.data.access_token;
+console.log("STS Response:");
+const googleAccessToken = authClient.googleAccessToken().token;
   if (!googleAccessToken) throw new Error('Failed to get Google access token from STS.');
 
   // 2. Impersonate your service account to get an ID token for Cloud Run
