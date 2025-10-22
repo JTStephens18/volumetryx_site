@@ -6,10 +6,9 @@ const { getVercelOidcToken } = require('@vercel/functions/oidc');
 // (You set these in Vercel's dashboard)
 const workloadIdentityProvider = process.env.GCP_WORKLOAD_IDENTITY_PROVIDER;
 const serviceAccountEmail = process.env.GCP_SERVICE_ACCOUNT_EMAIL;
-const projectId = process.env.GCP_PROJECT_ID;
 
 // Your private Cloud Run API URL
-const cloudRunUrl = `https://volumetryx-api-${projectId}.us-central1.run.app`;
+const cloudRunUrl = `https://volumetryx-api-${process.env.GCP_PROJECT_NUMBER}.us-central1.run.app`;
 
 // Initialize Google clients
 const stsClient = new sts_v1.Sts();
