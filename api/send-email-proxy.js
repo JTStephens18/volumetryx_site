@@ -46,12 +46,12 @@ const vercelToken = await getVercelOidcToken(audience);
 const authClient = ExternalAccountClient.fromJSON({
     type: 'external_account',
     audience: `//iam.googleapis.com/projects/${process.env.GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${process.env.GCP_WORKLOAD_IDENTITY_POOL_ID}/providers/${process.env.GCP_WORKLOAD_IDENTITY_POOL_PROVIDER_ID}`,
-    subjectTokenType: 'urn:ietf:params:oauth:token-type:id_token',
+    subjectTokenType: 'urn:ietf:params:oauth:token-type:jwt',
     tokenUrl: 'https://sts.googleapis.com/v1/token',
-    credential_source: {
-        token: vercelToken,
-    },
     serviceAccountImpersonationUrl: `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${serviceAccountEmail}:generateAccessToken`,
+    subject_token_supplier: {
+        getSubjectToken: getVercelOidcToken,
+    },
 });
 
 // console.log("STS Response data:", stsResponse.data);
