@@ -9,10 +9,10 @@
 // import Contact from './components/Contact';
 
 import { Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
 
 import RealEstatePage from './pages/RealEstatePage';
 import CommercialRealEstatePage from './pages/CommercialRealEstatePage';
+import MuseumPage from './pages/MuseumPage';
 
 export default function App() {
   return (
@@ -21,6 +21,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<RealEstatePage />} />
         <Route path="/cre" element={<CommercialRealEstatePage />} />
+        <Route path="/museum" element={<MuseumPage />} />
       </Routes>
     </div>
   );
