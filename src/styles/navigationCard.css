@@ -1,0 +1,150 @@
+.navigation-card {
+  /* Layout and Sizing: flex flex-col items-center justify-center gap-4 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing) * 4; /* gap-4 */
+
+  /* Padding (Default: p-6, MD: p-8) */
+  padding: calc(var(--spacing) * 6); /* p-6 */
+
+  /* Appearance: rounded-xl bg-white border border-gray-200 */
+  border-radius: var(--radius) + 4px; /* rounded-xl */
+  background-color: var(--color-white); /* bg-white */
+  border: 1px solid var(--color-gray-200); /* border border-gray-200 */
+
+  /* Positioning: group relative */
+  position: relative;
+  overflow: hidden; /* Important for containing the absolute glow effect */
+
+  /* Transitions: transition-all duration-300 ease-in-out */
+  transition: all 300ms ease-in-out;
+  cursor: pointer; /* To indicate it's clickable */
+}
+
+/* Medium breakpoint styles (md:p-8, md:text-base) - Assuming a standard MD breakpoint of 768px */
+@media (min-width: 768px) {
+  .navigation-card {
+    padding: calc(var(--spacing) * 8); /* md:p-8 */
+  }
+}
+
+/* Hover States: hover:border-blue-400 hover:shadow-lg hover:scale-105 */
+.navigation-card:hover {
+  border-color: var(--color-blue-400); /* hover:border-blue-400 */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05); /* hover:shadow-lg equivalent */
+  transform: scale(1.05); /* hover:scale-105 */
+}
+
+/* Active/Click State: active:scale-95 */
+.navigation-card:active {
+  transform: scale(0.95); /* active:scale-95 */
+}
+
+/* --- Icon Wrapper Styles --- */
+.navigation-card-icon-wrapper {
+  /* Layout and Sizing: flex items-center justify-center w-12 h-12 md:w-16 md:h-16 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 12); /* w-12 */
+  height: calc(var(--spacing) * 12); /* h-12 */
+  border-radius: var(--radius); /* rounded-lg */
+
+  /* Appearance: bg-blue-600 */
+  background-color: var(--color-blue-600); /* bg-blue-600 */
+
+  /* Transitions: transition-all duration-300 */
+  transition: background-color 300ms;
+}
+
+/* Medium breakpoint styles (md:w-16 md:h-16) */
+@media (min-width: 768px) {
+  .navigation-card-icon-wrapper {
+    width: calc(var(--spacing) * 16); /* md:w-16 */
+    height: calc(var(--spacing) * 16); /* md:h-16 */
+  }
+}
+
+/* Group-Hover State (Icon Wrapper) */
+.navigation-card:hover .navigation-card-icon-wrapper {
+  background-color: var(--color-blue-700); /* group-hover:bg-blue-700 */
+}
+
+/* --- Icon Main Styles (The Lucide Icon itself) --- */
+.icon-main {
+  /* Sizing: w-6 h-6 md:w-8 md:h-8 */
+  width: calc(var(--spacing) * 6); /* w-6 */
+  height: calc(var(--spacing) * 6); /* h-6 */
+  
+  /* Appearance: text-white transition-colors */
+  color: var(--color-white); /* text-white */
+  transition: color 300ms; /* transition-colors */
+}
+
+/* Medium breakpoint styles (md:w-8 md:h-8) */
+@media (min-width: 768px) {
+  .icon-main {
+    width: calc(var(--spacing) * 8); /* md:w-8 */
+    height: calc(var(--spacing) * 8); /* md:h-8 */
+  }
+}
+
+
+/* --- Label Styles --- */
+.navigation-card-label {
+  /* Typography: text-center text-sm md:text-base text-gray-700 transition-colors */
+  text-align: center; /* text-center */
+  font-size: var(--text-sm); /* text-sm */
+  color: var(--color-gray-700); /* text-gray-700 */
+  transition: color 300ms; /* transition-colors */
+}
+
+/* Medium breakpoint styles (md:text-base) */
+@media (min-width: 768px) {
+  .navigation-card-label {
+    font-size: var(--text-base); /* md:text-base */
+  }
+}
+
+/* Group-Hover State (Label) */
+.navigation-card:hover .navigation-card-label {
+  color: var(--color-gray-900); /* group-hover:text-gray-900 */
+}
+
+/* --- Glow Effect Styles --- */
+.navigation-card-glow {
+  /* Positioning: absolute inset-0 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Appearance: rounded-xl */
+  border-radius: var(--radius) + 4px; /* rounded-xl */
+
+  /* Gradient: bg-gradient-to-br from-blue-500/0 to-purple-600/0 */
+  background: linear-gradient(
+    to bottom right,
+    rgba(77, 148, 255, 0), /* blue-500/0 */
+    rgba(147, 51, 234, 0) /* purple-600/0 */
+  );
+
+  /* Transitions: transition-all duration-300 */
+  transition: all 300ms;
+
+  /* Interaction: pointer-events-none */
+  pointer-events: none;
+}
+
+/* Group-Hover State (Glow Effect) */
+.navigation-card:hover .navigation-card-glow {
+  /* group-hover:from-blue-500/20 group-hover:to-purple-600/20 */
+  background: linear-gradient(
+    to bottom right,
+    rgba(77, 148, 255, 0.2), /* blue-500/20 - approx of oklch(.623 .214 259.815) 20% alpha */
+    rgba(147, 51, 234, 0.2) /* purple-600/20 - approx of oklch(.558 .288 302.321) 20% alpha */
+  );
+}

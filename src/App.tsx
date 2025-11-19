@@ -10,18 +10,22 @@
 
 import { Routes, Route } from 'react-router-dom';
 
+import HomePage from './pages/HomePage';
 import RealEstatePage from './pages/RealEstatePage';
 import CommercialRealEstatePage from './pages/CommercialRealEstatePage';
 import MuseumPage from './pages/MuseumPage';
+import ProductsPage from './pages/ProductPage';
 
 export default function App() {
   return (
     <div className="min-h-screen">
       {/* <Navigation /> */}
       <Routes>
-        <Route path="/" element={<RealEstatePage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/re" element={<RealEstatePage />} />
         <Route path="/cre" element={<CommercialRealEstatePage />} />
         <Route path="/museum" element={<MuseumPage />} />
+        <Route path="/products" element={<ProductsPage />} />
       </Routes>
     </div>
   );
