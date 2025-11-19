@@ -86,6 +86,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </h3>
                 <div className="space-y-2 text-gray-600">
                   <p>📧 <a href="mailto:info@volumetryxlabs.com">info@volumetryxlabs.com</a></p>
+                  <p>📞 (205)-201-0636</p>
                   <p>🏢 Birmingham, AL</p>
                 </div>
               </div>
