@@ -18,7 +18,7 @@ export default function RealEstatePage() {
       <ReBusinessUseCases />
       <ReHowItWorks />
       <RePortfolio />
-      {/* <RePricing /> */}
+      <RePricing />
       {/* <Testimonials /> */}
       <ReContact />
     </>
