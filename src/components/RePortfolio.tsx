@@ -3,9 +3,10 @@ import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { X, Play } from 'lucide-react';
 // import innovationDepotImage from '../assets/ID_main_event_space.png';
-import HomeExteriorImage from "../assets/HomeExterior.png"
+// import HomeExteriorImage from "../assets/HomeExterior.png"
 import modernFarmhouseImage from '../assets/ModernFarmhouse.png';
 import luxuryApartmentImage from '../assets/LuxuryApartment.png';
+import artisticHomeImage from '../assets/IsaacHouse.png';
 
 const RePortfolio = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -79,12 +80,12 @@ const RePortfolio = () => {
     }, 
     {
       id: 3,
-      title: "Street View",
-      location: "Tacoma, WA",
+      title: "Artistic Residential Home",
+      location: "Birmingham, AL",
       size: "2,500 sq ft",
-      image: HomeExteriorImage,
-      description: "Exterior shot of a single story home.",
-      splat: "https://superspl.at/s?id=007cff23"
+      image: artisticHomeImage,
+      description: "Demo of an artistic residential home",
+      splat: "https://superspl.at/s?id=6ad10559"
     }, 
   ];
 
