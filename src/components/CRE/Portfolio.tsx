@@ -93,7 +93,7 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl text-gray-900 mb-8">
-            Explore Our Digital Spaces
+            Explore Our Digital Spaces 
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Step inside our portfolio of stunning 3D property experiences that have transformed how buyers connect with spaces.
