@@ -61,10 +61,10 @@ const handleSubmit = async (e: React.FormEvent) => {
           {/* Left Column - Content */}
           <div>
             <h2 className="text-4xl md:text-5xl text-gray-900 mb-8">
-              Ready to Showcase Your Property in Its True Light?
+              Ready to Showcase Your Event in Its True Light?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Let's discuss how Volumetryx Labs can transform your real estate marketing and help you close deals faster.
+              Let's discuss how Volumetryx Labs can transform your event sales, planning efficiency, and client satisfaction.
             </p>
             
             <div className="space-y-6">
@@ -73,7 +73,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   What You Get
                 </h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• Free consultation and property assessment</li>
+                  <li>• Free consultation and assessment</li>
                   <li>• Custom quote based on your specific needs</li>
                   <li>• Demo of our 3D technology capabilities</li>
                   {/* <li>• Timeline and project roadmap</li> */}
