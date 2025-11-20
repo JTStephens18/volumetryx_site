@@ -15,6 +15,7 @@ import RealEstatePage from './pages/RealEstatePage';
 import CommercialRealEstatePage from './pages/CommercialRealEstatePage';
 import MuseumPage from './pages/MuseumPage';
 import ProductsPage from './pages/ProductPage';
+import EventsPage from "./pages/EventsPage";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/cre" element={<CommercialRealEstatePage />} />
         <Route path="/museum" element={<MuseumPage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/venues" element={<EventsPage />} />
       </Routes>
     </div>
   );
