@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { X, Play } from 'lucide-react';
 // import innovationDepotImage from '../assets/ID_main_event_space.png';
-import openCourtYardImage from '../../assets/OpenCourtyard.png';
+import mercantileMorrisImage from '../../assets/MercantileOnMorris.png';
 import AbandonedHangarImage from '../../assets/AbandonedHangar.png';
 import ResidentialTowerImage from '../../assets/ResidentialTower.png';
 
@@ -61,12 +61,12 @@ const Portfolio = () => {
     // },
     {
       id: 1,
-      title: "Open Courtyard",
-      location: "Chicago, IL",
+      title: "Mercantile on Morris Ave",
+      location: "Birmingham, AL",
       // size: "1,500 sq ft",
-      image: openCourtYardImage,
-      description: "Technical demo of a modern open courtyard",
-      splat: "https://superspl.at/s?id=e3354698"
+      image: mercantileMorrisImage,
+      description: "Capture of the open courtyard area at Mercantile on Morris Ave.",
+      splat: "https://superspl.at/s?id=139fecd1"
     }, 
     {
       id: 2,

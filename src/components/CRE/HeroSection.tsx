@@ -41,7 +41,7 @@ const HeroSection = () => {
         
         <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-2xl mx-auto">
           {/* Transform properties into immersive 3D experiences that sell faster and showcase every detail with stunning realism. */}
-          Transform commercial assets into data-rich digital twins. Generate immerisve tours, virtual staging designs, as-built plans, and precise measurements from a single, streamlined appointment.
+          Transform commercial assets into data-rich digital twins. Generate immerisve tours, virtual staging designs, professional floorplans, and all lisitng photos from a single streamlined appointment.
         </p>
 
         {/* Interactive 3D Model Placeholder */}

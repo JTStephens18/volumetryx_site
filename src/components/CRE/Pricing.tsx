@@ -12,12 +12,12 @@ const Pricing = () => {
 
   const packages = [
     {
-      name: "Digital Listing",
-      price: "$499",
+      name: "Digital Showcase",
+      price: "$599",
       subtitle: "Starting at",
-      description: "Ideal for spaces that need to stand out.",
+      description: "The Essential Listing Upgrade",
       features: [
-        "Up to 2,500 sq ft",
+        "Up to 5,000 sq ft",
         "Link to a High-Fidelity, interactive 3D Model",
         "Up to 30 High-Resolution Photos (Extracted from model)", 
         "Standard Hosting",
@@ -27,16 +27,16 @@ const Pricing = () => {
       buttonVariant: "outline" as const
     },
     {
-      name: "Marketing Powerhouse",
-      price: "$799", 
+      name: "Premium Exposure Pack",
+      price: "$899", 
       subtitle: "Starting at",
       description: "The complete package to market your property across all digital channels.",
       features: [
-        "Up to 3,500 sq ft",
+        "Up to 7,500 sq ft",
         "Everything in Digital Listing, plus:",
-        "Up to 50 High-Resolution Photos",
         "One 60-Second Cinematic Video Tour",
         "Schematic Floor Plan Generation",
+        "Priority Processing",
       ],
       popular: true,
       buttonText: "Get Started",
@@ -46,11 +46,9 @@ const Pricing = () => {
       name: "Bespoke / Enterprise",
       price: "Custom Quote",
       subtitle: "",
-      description: "For developers, architects, and portfolio clients.",
+      description: "For developers, portfolio owners, and large, complex assets requiring a full data suite.",
       features: [
-        "Up to 4,500 sq ft",
         "Everything in Marketing Powerhouse, plus:",
-        "Virtual Staging for 3 Empty Rooms",
         "Unlimited High-Resolution Photos",
         "Social Media Content Pack (3 vertical video clips)",
         "Digital Twin File for owner",

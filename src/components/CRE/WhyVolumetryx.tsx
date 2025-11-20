@@ -4,13 +4,13 @@ const WhyVolumetryx = () => {
   const advantages = [
     {
       icon: <Eye className="w-8 h-8" />,
-      title: "Total Utility & Immersion",
+      title: "Total Visual Immersion",
       description: "Enable stakeholders, tenants, and engineers to conduct virtual walk-throughs, verify conditions, and plan tenant improvements with 1:1 photorealistic accuracy."
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "The As-Built Data Hub",
-      description: "Your property scan is a data factory. Extract unlimited hi-res photos, generate detailed as-built floor plans, and get precise measurements for BOMA calculations."
+      title: "The Listing Content Factory",
+      description: "Your property scan is a content hub. Extract unlimited hi-res photos, generate accurate schematic floor plans, and get visual measurements for clear communication—all ready for MLS and social media."
     },
     {
       icon: <Monitor className="w-8 h-8" />,
@@ -24,7 +24,7 @@ const WhyVolumetryx = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl text-gray-900 mb-8">
-            Actionable Data. Accelerated Deals.
+            Visual Impact. Accelerated Deals.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Revolutionary 3D technology that transforms how commercial properties are leased, managed, and sold.
