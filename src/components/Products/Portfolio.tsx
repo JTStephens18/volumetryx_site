@@ -17,7 +17,7 @@ const Portfolio = () => {
       // location: "Chicago, IL",
       // size: "1,500 sq ft",
       image: BeltAccessoryImage,
-      // description: "Technical demo of a modern open courtyard",
+      description: "Credit to ryancain_xr.",
       splat: "https://superspl.at/s?id=7877ef2e"
     }, 
     {
@@ -26,7 +26,7 @@ const Portfolio = () => {
       // location: "California, USA",
       // size: "2,000 sq ft",
       image: MotorcycleImage,
-      // description: "Technical demo of an abandoned hangar.",
+      description: "Credit to asolab.",
       splat: "https://superspl.at/s?id=891a7694"
     }, 
     {
@@ -35,7 +35,7 @@ const Portfolio = () => {
       // location: "Florida, USA",
       // size: "2,500 sq ft",
       image: SandwichImage,
-      // description: "Exterior shot of a modern residential tower.",
+      description: "Credit to tipatat.",
       splat: "https://superspl.at/s?id=d773c690"
     }, 
   ];

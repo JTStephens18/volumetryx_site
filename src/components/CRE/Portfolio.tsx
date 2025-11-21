@@ -74,7 +74,7 @@ const Portfolio = () => {
       location: "California, USA",
       // size: "2,000 sq ft",
       image: AbandonedHangarImage,
-      description: "Technical demo of an abandoned hangar.",
+      description: "Technical demo of an abandoned hangar. Credit to scanthecity.",
       splat: "https://superspl.at/s?id=ab940495"
     }, 
     {
@@ -83,7 +83,7 @@ const Portfolio = () => {
       location: "Florida, USA",
       // size: "2,500 sq ft",
       image: ResidentialTowerImage,
-      description: "Exterior shot of a modern residential tower.",
+      description: "Exterior shot of a modern residential tower. Credit to d3creative.",
       splat: "https://superspl.at/s?id=0a7b7ff1"
     }, 
   ];

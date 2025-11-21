@@ -65,7 +65,7 @@ const Portfolio = () => {
       // location: "Chicago, IL",
       // size: "1,500 sq ft",
       image: MotorcycleImage,
-      description: "Technical demo showcasing a motorcycle",
+      description: "Technical demo showcasing a motorcycle. Credit to asolab.",
       splat: "https://superspl.at/s?id=891a7694"
     }, 
     {
@@ -74,7 +74,7 @@ const Portfolio = () => {
       // location: "California, USA",
       // size: "2,000 sq ft",
       image: PotteryMuseumImage,
-      description: "Technical demo of a pottery museum",
+      description: "Technical demo of a pottery museum. Credit to scanthecity.",
       splat: "https://superspl.at/s?id=99dbe907"
     }, 
     {
@@ -83,7 +83,7 @@ const Portfolio = () => {
       // location: "Florida, USA",
       // size: "2,500 sq ft",
       image: TrexImage,
-      description: "Technical demo featuring a T-Rex model",
+      description: "Technical demo featuring a T-Rex model. Credit to romagnoli.",
       splat: "https://superspl.at/s?id=ab7522d0"
     }, 
   ];

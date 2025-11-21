@@ -65,7 +65,7 @@ const Portfolio = () => {
       // location: "Birmingham, AL",
       // size: "1,500 sq ft",
       image: ArtPieceImage,
-      description: "Capture of an art piece displayed in a modern setting",
+      description: "Capture of an art piece displayed in a modern setting. Credit to sa3d.",
       splat: "https://superspl.at/s?id=7dd69773"
     }, 
     {
@@ -74,7 +74,7 @@ const Portfolio = () => {
       // location: "California, USA",
       // size: "2,000 sq ft",
       image: HolidayImage,
-      description: "Demo of a holiday set piece.",
+      description: "Demo of a holiday set piece. Credit to tosolini.",
       splat: "https://superspl.at/s?id=d575e62d"
     }, 
     {
@@ -83,7 +83,7 @@ const Portfolio = () => {
       // location: "Florida, USA",
       // size: "2,500 sq ft",
       image: WinterGardenImage,
-      description: "Capture of a winter garden scene.",
+      description: "Capture of a winter garden scene. Credit to taskcan.",
       splat: "https://superspl.at/s?id=786600f0"
     }, 
   ];

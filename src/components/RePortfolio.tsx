@@ -66,7 +66,7 @@ const RePortfolio = () => {
       location: "Birmingham, AL",
       size: "1,500 sq ft",
       image: modernFarmhouseImage,
-      description: "Technical demo of a modern farmhouse with open-concept living spaces and rustic yet contemporary design elements.",
+      description: "Technical demo of a modern farmhouse with open-concept living spaces and rustic yet contemporary design elements. Credit to yabemute.",
       splat: "https://superspl.at/s?id=0feb4c5c"
     }, 
     {
@@ -75,7 +75,7 @@ const RePortfolio = () => {
       location: "Miami, FL",
       size: "2,000 sq ft",
       image: luxuryApartmentImage,
-      description: "Technical demo of a luxury high-rise apartment featuring sleek interiors and panoramic city views.",
+      description: "Technical demo of a luxury high-rise apartment featuring sleek interiors and panoramic city views. Credit to mrshi123.",
       splat: "https://superspl.at/s?id=a7c5e48c"
     }, 
     {
@@ -84,7 +84,7 @@ const RePortfolio = () => {
       location: "Birmingham, AL",
       size: "2,500 sq ft",
       image: artisticHomeImage,
-      description: "Demo of an artistic residential home",
+      description: "Scan of an artistic residential home",
       splat: "https://superspl.at/s?id=6ad10559"
     }, 
   ];
